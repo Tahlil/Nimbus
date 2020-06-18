@@ -1,0 +1,7 @@
+{
+  "name": "Nimbus",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
