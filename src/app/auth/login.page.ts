@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-auth',
-  templateUrl: './auth.page.html',
+  templateUrl: './login.page.html',
   styleUrls: ['./auth.page.scss'],
 })
 export class LogInPage implements OnInit {

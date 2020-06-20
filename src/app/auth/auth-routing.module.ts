@@ -6,6 +6,10 @@ import { LogInPage } from './login.page';
 
 const routes: Routes = [
   {
+    path: '',
+    component: SignUpPage
+  },
+  {
     path: '/login',
     component: LogInPage
   },
