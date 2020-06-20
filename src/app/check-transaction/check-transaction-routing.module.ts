@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CheckTransactionPage } from './check-transaction.page';
-
+import { SuperTabsModule } from '@ionic-super-tabs/angular';
 const routes: Routes = [
   {
     path: '',
@@ -23,7 +23,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),
+            SuperTabsModule.forRoot(),
+  ],
   exports: [RouterModule],
 })
 export class CheckTransactionPageRoutingModule {}

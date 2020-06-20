@@ -9,6 +9,7 @@ import { AuthPageRoutingModule } from './auth-routing.module';
 import { SignUpPage } from './signup.page';
 import { LogInPage } from './login.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
