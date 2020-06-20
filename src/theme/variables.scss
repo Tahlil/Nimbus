@@ -3,6 +3,7 @@
 
 /** Ionic CSS Variables **/
 :root {
+  --ion-margin: 40px;
   /** primary **/
   --ion-color-primary: #0F0766;
   --ion-color-primary-rgb: 15,7,102;
@@ -235,3 +236,4 @@ ion-toolbar {
 ion-list > ion-item > ion-label {
   --color: var(--ion-color-tertiary) !important;
 }
+
