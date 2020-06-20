@@ -5,18 +5,10 @@ import { SignUpPage } from './signup.page';
 import { LogInPage } from './login.page';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: SignUpPage
-  },
-  {
-    path: '/login',
-    component: LogInPage
-  },
-  {
-    path: '/signup',
-    component: SignUpPage
-  }
+  { path: 'login', component: LogInPage },
+  { path: 'signup', component: SignUpPage },
+
+  
 ];
 
 @NgModule({

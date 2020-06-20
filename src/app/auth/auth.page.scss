@@ -1,0 +1,35 @@
+.link-cont {
+    position: relative;
+    font-size: 24px;
+  }
+  .link {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    padding: 10px 0;
+    color: #20C2F7;
+  }
+  .link-wrapper {
+    position: relative;
+    display: block;
+    padding: 10px 0;
+  }
+  .inner-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  .hover:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    background-color: #20C2F7;
+    transition: transform 0.3s;
+  }
+  .hover:hover:after {
+    transform: scaleX(1);
+  }
