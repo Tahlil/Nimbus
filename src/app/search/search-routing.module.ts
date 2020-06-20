@@ -5,7 +5,7 @@ import { SearchPage } from './search.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'khatyan',
     component: SearchPage
   },
   {
