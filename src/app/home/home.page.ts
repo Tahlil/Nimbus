@@ -7,6 +7,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 })
 export class HomePage {
   @ViewChild('welcome') welcome: ElementRef;
+  @ViewChild('to') to: ElementRef;
   constructor() {
     
   }
@@ -14,8 +15,8 @@ export class HomePage {
   ngAfterViewInit() {
     let that = this
     setTimeout(function() {
-      console.log(that.welcome);
       that.welcome.nativeElement.classList.remove('hidden');
+
     },1000);
   }
 

@@ -9,7 +9,7 @@
 
 .fly-in-text li {
 	display: inline-block;
-	margin-right:50px;
+	margin-right:30px;
 	font-family: Open Sans, Arial;
 	font-weight: 300;
 	font-size: 4em;
@@ -76,6 +76,37 @@
 	transform: translateX(30px) translateY(200px);
 }
 
+.fade-in {
+	animation: fadeIn ease 7s;
+	-webkit-animation: fadeIn ease 7s;
+	-moz-animation: fadeIn ease 7s;
+	-o-animation: fadeIn ease 7s;
+	-ms-animation: fadeIn ease 7s;
+	}
+	@keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+	}
+	
+	@-moz-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+	}
+	
+	@-webkit-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+	}
+	
+	@-o-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+	}
+	
+	@-ms-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+	}
 h2{
   position: absolute;
 	left: 50%;
@@ -84,6 +115,18 @@ h2{
 
 img{
   position: absolute;
-	left: 46.5%;
+	left: 50%;
 	top: 21%;
+	margin-left: -65px
+}
+
+ion-grid{
+	position: absolute;
+	left: 50%;
+	top: 41%;
+	margin-left: -120px
+}
+
+ion-button{
+	width: 110%;
 }

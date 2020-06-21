@@ -14,8 +14,24 @@
       <li>E</li>
     </ul>
   
-    <h2>To</h2>
+    <h2 #to class="fade-in">To</h2>
     <img src="../assets/img/Nimbus.png" width="150" height="140"/>
-    
+    <ion-grid >
+      <ion-row>
+        <ion-col class="ion-text-center">
+            <ion-button color="secondary">Check Transactions</ion-button>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center">
+          <ion-button color="secondary" [routerLink]="['/search/khatyan']">Search khatyan</ion-button>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center">
+        <ion-button color="secondary">Check Lands For Sale</ion-button>
+    </ion-col>
+</ion-row>
+    </ion-grid>
    
 </ion-content>
