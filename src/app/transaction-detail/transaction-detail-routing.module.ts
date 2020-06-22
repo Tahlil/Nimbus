@@ -5,7 +5,7 @@ import { TransactionDetailPage } from './transaction-detail.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'detail',
     component: TransactionDetailPage
   }
 ];
