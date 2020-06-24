@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'transaction',
     loadChildren: () => import('./transaction-detail/transaction-detail.module').then( m => m.TransactionDetailPageModule)
   },
+  {
+    path: 'option',
+    loadChildren: () => import('./option/option.module').then( m => m.OptionPageModule)
+  },
 ];
 
 @NgModule({

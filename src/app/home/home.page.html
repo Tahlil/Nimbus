@@ -1,37 +1,29 @@
-
-
 <ion-content [fullscreen]="true">
- 
+  <ul class="fly-in-text hidden" #welcome color="primary">
+    <li>W</li>
+    <li>E</li>
+    <li>L</li>
+    <li>C</li>
+    <li>O</li>
+    <li>M</li>
+    <li>E</li>
+  </ul>
 
-
-    <ul class="fly-in-text hidden" #welcome color="primary">
-      <li>W</li>
-      <li>E</li>
-      <li>L</li>
-      <li>C</li>
-      <li>O</li>
-      <li>M</li>
-      <li>E</li>
-    </ul>
-  
-    <h2 #to class="fade-in">To</h2>
-    <img src="../assets/img/Nimbus.png" width="150" height="140"/>
-    <ion-grid >
-      <ion-row>
-        <ion-col class="ion-text-center">
-            <ion-button color="secondary">Check Transactions</ion-button>
-        </ion-col>
+  <h2 #to class="fade-in">To</h2>
+  <img src="../assets/img/Nimbus.png" width="150" height="140" />
+  <ion-grid>
+    <p>Login to get the services.</p>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button color="secondary" [routerLink]="['/auth/signup']">Sign up</ion-button>
+      </ion-col>
     </ion-row>
     <ion-row>
       <ion-col class="ion-text-center">
-          <ion-button color="secondary" [routerLink]="['/search/khatyan']">Search khatyan</ion-button>
+        <ion-button color="secondary" [routerLink]="['/auth/login']"
+          >Log in</ion-button
+        >
       </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col class="ion-text-center">
-        <ion-button color="secondary" [routerLink]="['/transaction/detail']">Check Lands For Sale</ion-button>
-    </ion-col>
-</ion-row>
-    </ion-grid>
-   
+    </ion-row>
+  </ion-grid>
 </ion-content>
