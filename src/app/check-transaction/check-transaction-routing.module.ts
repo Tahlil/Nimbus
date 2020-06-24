@@ -19,12 +19,16 @@ const routes: Routes = [
   {
     path: 'pending',
     loadChildren: () => import('./pending/pending.module').then( m => m.PendingPageModule)
+  },
+  {
+    path: 'requests',
+    loadChildren: () => import('./requests/requests.module').then( m => m.RequestsPageModule)
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes),
-            SuperTabsModule.forRoot(),
+            SuperTabsModule
   ],
   exports: [RouterModule],
 })
