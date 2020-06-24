@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MyTransactionsPageRoutingModule } from './my-transactions-routing.module';
+
 
 import { MyTransactionsPage } from './my-transactions.page';
 
@@ -13,8 +13,9 @@ import { MyTransactionsPage } from './my-transactions.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    MyTransactionsPageRoutingModule
+    
   ],
-  declarations: [MyTransactionsPage]
+  declarations: [MyTransactionsPage],
+  entryComponents: [MyTransactionsPage]
 })
 export class MyTransactionsPageModule {}

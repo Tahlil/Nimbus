@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PendingPageRoutingModule } from './pending-routing.module';
 
 import { PendingPage } from './pending.page';
 
@@ -13,8 +12,8 @@ import { PendingPage } from './pending.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    PendingPageRoutingModule
   ],
-  declarations: [PendingPage]
+  declarations: [PendingPage],
+  entryComponents: [PendingPage]
 })
 export class PendingPageModule {}

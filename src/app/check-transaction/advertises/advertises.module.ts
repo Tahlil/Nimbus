@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AdvertisesPageRoutingModule } from './advertises-routing.module';
-
 import { AdvertisesPage } from './advertises.page';
 
 @NgModule({
@@ -13,8 +11,8 @@ import { AdvertisesPage } from './advertises.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    AdvertisesPageRoutingModule
   ],
-  declarations: [AdvertisesPage]
+  declarations: [AdvertisesPage],
+  entryComponents: [AdvertisesPage]
 })
 export class AdvertisesPageModule {}

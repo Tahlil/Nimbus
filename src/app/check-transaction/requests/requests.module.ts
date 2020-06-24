@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RequestsPageRoutingModule } from './requests-routing.module';
+
 
 import { RequestsPage } from './requests.page';
 
@@ -13,7 +13,7 @@ import { RequestsPage } from './requests.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    RequestsPageRoutingModule
+    
   ],
   declarations: [RequestsPage]
 })

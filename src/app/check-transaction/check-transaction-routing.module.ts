@@ -3,6 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CheckTransactionPage } from './check-transaction.page';
 import { SuperTabsModule } from '@ionic-super-tabs/angular';
+import { AdvertisesPageModule } from './advertises/advertises.module';
+import { RequestsPageModule } from './requests/requests.module';
+import { PendingPageModule } from './pending/pending.module';
+import { MyTransactionsPageModule } from './my-transactions/my-transactions.module';
 const routes: Routes = [
   {
     path: '',
@@ -28,7 +32,11 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes),
-            SuperTabsModule
+            SuperTabsModule,
+            AdvertisesPageModule,
+            RequestsPageModule,
+            PendingPageModule,
+            MyTransactionsPageModule
   ],
   exports: [RouterModule],
 })
