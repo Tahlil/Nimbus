@@ -29,11 +29,11 @@
 
 hr {background: silver}
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
     ion-content{
         width: 80%;
         height: 90%;
         float: right;
         margin-right: 100px;
     }
-  }
+}

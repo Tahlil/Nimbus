@@ -12,14 +12,18 @@
   <h2 #to class="fade-in">To</h2>
   <img src="../assets/img/Nimbus.png" width="150" height="140" />
   <ion-grid>
-    <p>Login to get the services.</p>
     <ion-row>
-      <ion-col class="ion-text-center">
+      <ion-col>
+    <p>Login to get all the services.</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
         <ion-button color="secondary" [routerLink]="['/auth/signup']">Sign up</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col class="ion-text-center">
+      <ion-col>
         <ion-button color="secondary" [routerLink]="['/auth/login']"
           >Log in</ion-button
         >

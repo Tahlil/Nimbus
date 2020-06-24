@@ -17,24 +17,18 @@
 	transition: all 2.5s ease;
 }
 
-@media screen and (max-width: 1275px) {
+@media screen and (max-width: 1400px) {
     .fly-in-text li {
+		display: inline;
 		margin-right:30px;
 		font-weight: 300;
 		font-size: 3em;
 	}
 }
 
-@media screen and (max-width: 900px) {
-    .fly-in-text li {	
-    	display: inline;
-		margin-right:20px;
-		font-weight: 300;
-		font-size: 3em;
-	}
-}
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 1200px) {
     .fly-in-text li {	
     	display: inline;
 		margin-right:20px;
@@ -124,9 +118,9 @@ ion-grid{
 	position: absolute;
 	left: 50%;
 	top: 41%;
-	margin-left: -50px
+	margin-left: -90px
 }
 
 ion-button{
-	width: 110%;
+	width: 11rem;
 }
