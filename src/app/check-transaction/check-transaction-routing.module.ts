@@ -10,24 +10,25 @@ import { MyTransactionsPageModule } from './my-transactions/my-transactions.modu
 const routes: Routes = [
   {
     path: '',
-    component: CheckTransactionPage
+    component: CheckTransactionPage,
+    pathMatch: 'full'
   },
-  {
-    path: 'advertises',
-    loadChildren: () => import('./advertises/advertises.module').then( m => m.AdvertisesPageModule)
-  },
-  {
-    path: 'my-transactions',
-    loadChildren: () => import('./my-transactions/my-transactions.module').then( m => m.MyTransactionsPageModule)
-  },
-  {
-    path: 'pending',
-    loadChildren: () => import('./pending/pending.module').then( m => m.PendingPageModule)
-  },
-  {
-    path: 'requests',
-    loadChildren: () => import('./requests/requests.module').then( m => m.RequestsPageModule)
-  }
+  // {
+  //   path: 'advertises',
+  //   loadChildren: () => import('./advertises/advertises.module').then( m => m.AdvertisesPageModule)
+  // },
+  // {
+  //   path: 'my-transactions',
+  //   loadChildren: () => import('./my-transactions/my-transactions.module').then( m => m.MyTransactionsPageModule)
+  // },
+  // {
+  //   path: 'pending',
+  //   loadChildren: () => import('./pending/pending.module').then( m => m.PendingPageModule)
+  // },
+  // {
+  //   path: 'requests',
+  //   loadChildren: () => import('./requests/requests.module').then( m => m.RequestsPageModule)
+  // }
 ];
 
 @NgModule({

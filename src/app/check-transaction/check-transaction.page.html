@@ -1,6 +1,6 @@
 
 <super-tabs>
-  <super-tabs-toolbar slot="top" >
+  <super-tabs-toolbar slot="top" color="secondary">
     <super-tab-button>
       <ion-icon name="documents-outline"></ion-icon>
       <ion-label>My titles</ion-label>    
@@ -21,22 +21,22 @@
   <super-tabs-container>
     <super-tab>
       <ion-content>
-        <ion-nav animated="true" root="MyTitlesPage" swipeGesture="true"></ion-nav>
+        <ion-nav animated="true" [root]="MyTitlesPage" swipeGesture="true"></ion-nav>
       </ion-content>
     </super-tab>
     <super-tab>
       <ion-content>
-        <ion-nav animated="true" root="RequestsPage" swipeGesture="true"></ion-nav>
+        <ion-nav animated="true" [root]="RequestsPage" swipeGesture="true"></ion-nav>
       </ion-content>
     </super-tab>
     <super-tab>
       <ion-content>
-        <ion-nav animated="true" root="TxPage" swipeGesture="true"></ion-nav>
+        <ion-nav animated="true" [root]="TxPage" swipeGesture="true"></ion-nav>
       </ion-content>
     </super-tab>
     <super-tab>
       <ion-content>
-        <ion-nav animated="true" root="AdPage" swipeGesture="true"></ion-nav>
+        <ion-nav animated="true" [root]="AdPage" swipeGesture="true"></ion-nav>
       </ion-content>
     </super-tab>
   </super-tabs-container>
