@@ -1,4 +1,5 @@
 <ion-content>
+
   <ion-grid>
     <ion-row>
         <ion-col size="12" size-sm="10" offset-sm="1">
@@ -13,7 +14,16 @@
             <ion-list>
                 <ion-item>
                     <ion-label position="floating">Division</ion-label>
-                    <ion-input></ion-input>
+                    <ion-select  [(ngModel)]="selectedDiv" (ngModelChange)="checkDivSelect()">
+                        <ion-select-option value="Barishal">Barishal</ion-select-option>
+                        <ion-select-option value="Chittagong">Chittagong</ion-select-option>
+                        <ion-select-option value="Dhaka">Dhaka</ion-select-option>
+                        <ion-select-option value="Khulna">Khulna</ion-select-option>
+                        <ion-select-option value="Rajshahi">Rajshahi</ion-select-option>
+                        <ion-select-option value="Rangpur">Rangpur</ion-select-option>
+                        <ion-select-option value="Sylhet">Sylhet</ion-select-option>
+                        <ion-select-option value="Mymensing">Mymensing</ion-select-option>
+                    </ion-select>
                 </ion-item>
             </ion-list>
             
@@ -22,7 +32,16 @@
             <ion-list>
                 <ion-item>
                     <ion-label position="floating">District</ion-label>
-                    <ion-input></ion-input>
+                    <ion-select [(ngModel)]="selectedDis" (ngModelChange)="checkDisSelect()">
+                        <ion-select-option value="Barishal">Dhaka</ion-select-option>
+                        <ion-select-option value="Chittagong">Ghazipur</ion-select-option>
+                        <ion-select-option value="Dhaka">Kishoreganj</ion-select-option>
+                        <ion-select-option value="Khulna">Manikganj</ion-select-option>
+                        <ion-select-option value="Rajshahi">Munshiganj</ion-select-option>
+                        <ion-select-option value="Rangpur">Narayanganj</ion-select-option>
+                        <ion-select-option value="Sylhet">Narsingdi</ion-select-option>
+                        <ion-select-option value="Mymensing">Tangail</ion-select-option>
+                    </ion-select>
                 </ion-item>
             </ion-list>     
         </ion-col>
@@ -32,35 +51,53 @@
           <ion-list>
               <ion-item>
                   <ion-label position="floating">Sub district</ion-label>
-                  <ion-input></ion-input>
+                  <ion-select [(ngModel)]="selectedSubDis" (ngModelChange)="checkSubDisSelect()">
+                    <ion-select-option value="Barishal">Dhamrai</ion-select-option>
+                    <ion-select-option value="Chittagong">Dohar</ion-select-option>
+                    <ion-select-option value="Dhaka">Kishoreganj</ion-select-option>
+                    <ion-select-option value="Khulna">Keraniganj</ion-select-option>
+                    <ion-select-option value="Rajshahi">Nawabganj</ion-select-option>
+                    <ion-select-option value="Rangpur">Narayanganj</ion-select-option>
+                    <ion-select-option value="Sylhet">Savar</ion-select-option>
+                    <ion-select-option value="Mymensing">Demra</ion-select-option>
+                </ion-select>
               </ion-item>
           </ion-list>
           
       </ion-col>
       <ion-col size="12" size-sm="5">
-          <ion-list>
+          <ion-list>     
               <ion-item>
-                  <ion-label position="floating">Mouja (Area name)</ion-label>
-                  <ion-input></ion-input>
+                  <ion-label position="floating">Mouza (Area name)</ion-label>
+                  <ion-select [(ngModel)]="selectedMouza" (ngModelChange)="checkMouzaSelect()">
+                    <ion-select-option value="001-নৈহাটী">001-নৈহাটী</ion-select-option>
+                    <ion-select-option value="002-ছোটপাড়াগাঁও">002-ছোটপাড়াগাঁও</ion-select-option>
+                    <ion-select-option value="004-ভাটিয়া কান্দি">004-ভাটিয়া কান্দি</ion-select-option>
+                    <ion-select-option value="010-ব্রাহ্মন করেশ্বরী">010-ব্রাহ্মন করেশ্বরী</ion-select-option>
+                    <ion-select-option value="017-ছোট কাউনদিয়া">017-ছোট কাউনদিয়া</ion-select-option>
+                    <ion-select-option value="019-যাত্রাবাড়ী">019-যাত্রাবাড়ী</ion-select-option>
+                    <ion-select-option value="034-হাটু ভাঙ্গা">034-হাটু ভাঙ্গা</ion-select-option>
+                    <ion-select-option value="036-নলাম বাগবাড়ী">036-নলাম বাগবাড়ী</ion-select-option>
+                    <ion-select-option value="079-শ্রীখন্ডিয়া">079-শ্রীখন্ডিয়া</ion-select-option>
+                    <ion-select-option value="081-জিরাব">081-জিরাব</ion-select-option>
+                    <ion-select-option value="121-ডগর মোড়া">121-ডগর মোড়া</ion-select-option>
+                    <ion-select-option value="147-মজিদপুর">147-মজিদপুর</ion-select-option>
+                    <ion-select-option value="148-টাট্টি">148-টাট্টি</ion-select-option>
+                </ion-select>
               </ion-item>
           </ion-list>     
       </ion-col>
   </ion-row>
-  <ion-row>
-    <ion-col size="12" size-sm="5" offset-sm="1">
-        <ion-list>
-            <ion-item>
-                <ion-label position="floating">Deed number</ion-label>
-                <ion-input></ion-input>
-            </ion-item>
-        </ion-list>     
-    </ion-col>
-</ion-row>
+
     <ion-row>
         <ion-col class="ion-text-center">
-            <ion-button color="secondary"><ion-icon name="search"></ion-icon> &nbsp; Find </ion-button>
+            <ion-button color="secondary" (click)="clickFind()"><ion-icon name="search"></ion-icon> &nbsp; Find </ion-button>
         </ion-col>
     </ion-row>
-   
+    <ion-row *ngIf="searchInputGiven">
+        <ion-col class="ion-text-center">
+            <p>Search result</p>
+        </ion-col>
+    </ion-row>
 </ion-grid>
 </ion-content>
