@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LandInfoService } from '../land-info.service';
 import { ModalController } from '@ionic/angular';
-import { ModelPage } from '../model/model/model.page';
+import { ModalPage } from '../modals/modal/modal.page';
 @Component({
   selector: 'app-search',
   templateUrl: './search.page.html',
@@ -66,7 +66,7 @@ export class SearchPage implements OnInit {
 
   async openModal(){
     const modal = await this.modalController.create({
-      component: ModelPage,
+      component: ModalPage,
     });
     return await modal.present();
   }

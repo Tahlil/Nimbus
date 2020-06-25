@@ -35,10 +35,10 @@ const routes: Routes = [
     path: 'option',
     loadChildren: () => import('./option/option.module').then( m => m.OptionPageModule)
   },
-  {
-    path: 'model',
-    loadChildren: () => import('./model/model/model.module').then( m => m.ModelPageModule)
-  },
+  // {
+  //   path: 'model',
+  //   loadChildren: () => import('./model/model/model.module').then( m => m.ModelPageModule)
+  // },
 ];
 
 @NgModule({
