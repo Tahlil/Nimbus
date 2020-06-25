@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LandInfoService } from '../land-info.service';
-
+import { ModalController } from '@ionic/angular';
+import { ModelPage } from '../model/model/model.page';
 @Component({
   selector: 'app-search',
   templateUrl: './search.page.html',
@@ -13,8 +14,9 @@ export class SearchPage implements OnInit {
   selectedDis:string;
   selectedSubDis:string;
   selectedMouza:string;
-  constructor(private landInfoService:LandInfoService) { }
+  constructor(private landInfoService:LandInfoService, public modalController: ModalController) { }
   landData;
+  selectedData= [];
 
   ngOnInit() {
     this.selectedDiv= "";
@@ -47,9 +49,26 @@ export class SearchPage implements OnInit {
   }
 
   clickFind(){
+    this.selectedData = []
     if (this.selectedDiv !== "" && this.selectedDis !== "" && this.selectedSubDis !== "" && this.selectedMouza !== ""){
       console.log(this.landData);
+      let lData:any
+      for(lData of this.landData){
+        if(this.selectedMouza.split('-')[1] === lData.Title_Deed.Area){
+          console.log(lData.Title_Deed.Area);
+          this.selectedData.push(lData)
+        }
+          
+      }
       this.searchInputGiven = true; 
     }
   }
+
+  async openModal(){
+    const modal = await this.modalController.create({
+      component: ModelPage,
+    });
+    return await modal.present();
+  }
+
 }
