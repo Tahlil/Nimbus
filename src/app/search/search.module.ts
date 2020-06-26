@@ -7,13 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { SearchPageRoutingModule } from './search-routing.module';
 
 import { SearchPage } from './search.page';
-
+import { ScrollbarThemeModule  } from '../directives/scrollbar.directive';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SearchPageRoutingModule
+    SearchPageRoutingModule,
+    ScrollbarThemeModule 
   ],
   declarations: [SearchPage]
 })
