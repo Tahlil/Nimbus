@@ -168,7 +168,7 @@
   margin-top: 51px;
 }
 
-#spinner{
+#spinner, #spinner2{
   z-index:10000;
     opacity:1;
     width: 50px;
@@ -195,13 +195,13 @@
     }
 }
 
-#success-checkmark {
+#success-checkmark, #success-checkmark2 {
     width: 70px;
     height: 100px;
     margin: 0 auto;
     margin-top: -11%;
     margin-left: 11%;
-    #check-icon {
+    #check-icon, #check-icon2 {
         width: 80px;
         height: 80px;
         position: relative;
@@ -348,4 +348,8 @@
         right: 8px;
         top: 38px;
     }
+}
+
+#bankis{
+  background-image: url("../../assets/img/yes.png") !important;
 }

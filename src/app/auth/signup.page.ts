@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-function verify(){
+function verifyNID(){
   var nidV = document.getElementById('nidV');
   nidV.onclick = function() {
     nidV.innerHTML = "Verifying..."
@@ -14,6 +14,24 @@ function verify(){
       nidV.style.background = "#fff";
       nidV.style.border = "3px solid #4CAF50"
       nidV.style.color = "#4CAF50";
+    }, 3000);
+  }
+}
+
+function verifyBank(){
+  var bankV = document.getElementById('bankV');
+  bankV.onclick = function() {
+    bankV.innerHTML = "Verifying..."
+    bankV.setAttribute("disabled", "disabled");
+    document.getElementById('spinner2').style.visibility = "visible";
+    setTimeout(() => {
+      document.getElementById('spinner2').style.visibility = "hidden";
+      document.getElementById('success-checkmark2').style.display = "block";
+      document.getElementById('check-icon2').style.display = "block";
+      bankV.innerHTML = "Verified !";
+      bankV.style.background = "#fff";
+      bankV.style.border = "3px solid #4CAF50"
+      bankV.style.color = "#4CAF50";
     }, 3000);
   }
 }
@@ -49,19 +67,28 @@ function callImageLoader() {
   }
 };
 
+function getBankImage(selected){
+  document.getElementById("bankLogo").setAttribute("src", "../../assets/img/" + selected+".png")
+}
+
 @Component({
   selector: 'app-auth',
   templateUrl: './signup.page.html',
   styleUrls: ['./auth.page.scss'],
 })
 export class SignUpPage implements OnInit {
-
+  selectedDiv:string;
   
   constructor() { }
 
+  checkDivSelect(){
+  getBankImage(this.selectedDiv);
+  }
+
   ngOnInit() {
     callImageLoader();
-    verify()
+    verifyNID();
+    verifyBank();
   }
 
 }
