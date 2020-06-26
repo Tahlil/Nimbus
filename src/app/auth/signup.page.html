@@ -68,10 +68,10 @@
             </ion-col>
         </ion-row>
         <ion-row class="imageHolder">
-            <ion-col size="2" offset="1">
+            <ion-col size-sm="2" offset-sm="1">
                 <ion-text class="required" color="tertiary">Upload your National ID</ion-text>
             </ion-col>
-            <ion-col size="1"  offset="1">
+            <ion-col size-sm="1"  offset-sm="1">
   
                     <div class="wrapper">
                         <button class="no-image" id="img-result">Upload Image</button>
@@ -84,9 +84,25 @@
                   </div>  
        
             </ion-col>
+            <ion-col size-sm="1">
+                <button style="background-color: teal; color: azure; padding: 10px; border-radius: 11px; font: bolder; width:9rem" rounded id="nidV">
+                    Verify National ID 
+                </button>
+            </ion-col>
+            <ion-col size-sm="3">
+               <div id="spinner" style="visibility: hidden;">  </div>
+               <div id="success-checkmark" style="display: none;">
+                <div id="check-icon" style="display: none;">
+                  <span class="icon-line line-tip"></span>
+                  <span class="icon-line line-long"></span>
+                  <div class="icon-circle"></div>
+                  <div class="icon-fix"></div>
+                </div>
+              </div>
+            </ion-col>
+            
             
         </ion-row>
-
         <ion-row>
             <ion-col size-sm="6" offset-sm="3">
                 <ion-text color="primary" slo class="ion-margin-left">
@@ -94,7 +110,7 @@
                 </ion-text> 
             </ion-col>
         </ion-row>
-     
+    
         <ion-row>
             <ion-col class="ion-text-center">
                 <ion-button color="secondary"  [routerLink]="['/home']">Finish</ion-button>
