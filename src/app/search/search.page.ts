@@ -50,7 +50,7 @@ export class SearchPage implements OnInit {
 
   clickFind(){
     this.selectedData = []
-    if (this.selectedDiv !== "" && this.selectedDis !== "" && this.selectedSubDis !== "" && this.selectedMouza !== ""){
+    // if (this.selectedDiv !== "" && this.selectedDis !== "" && this.selectedSubDis !== "" && this.selectedMouza !== ""){
       console.log(this.landData);
       let lData:any
       for(lData of this.landData){
@@ -61,7 +61,7 @@ export class SearchPage implements OnInit {
           
       }
       this.searchInputGiven = true; 
-    }
+    // }
   }
 
   async openModal(){
