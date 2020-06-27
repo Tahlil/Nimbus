@@ -71,9 +71,7 @@ h1 {
   table tbody tr.priority-200 td:first-of-type {
     border-left: 0.3125rem solid #d6a13f;
   }
-  table tbody tr.priority-300 td:first-of-type {
-    border-left: 0.3125rem solid #4480e7;
-  }
+
   table tbody tr.priority-600 td:first-of-type {
     border-left: 0.3125rem solid #40c587;
   }
@@ -83,32 +81,12 @@ h1 {
   table tbody tr.priority-200 td .fa-circle {
     color: #d6a13f;
   }
-  table tbody tr.priority-300 td .fa-circle {
-    color: #4480e7;
-  }
+
   table tbody tr.priority-600 td .fa-circle {
     color: #40c587;
   }
-  .delete-btn {
-    cursor: pointer;
-    background-color: #242c4c;
-    background-color: transparent;
-    border: 0;
-    border-radius: 0.125rem;
-    color: #909090;
-    font-size: 1.1rem;
-    opacity: 0.2;
-    padding: 0.3125rem 0.625rem;
-  }
-  .delete-btn:hover {
-    color: #ff0000;
-  }
-  .delete-btn:focus {
-    outline: 0;
-  }
-  table tbody tr:hover .delete-btn {
-    opacity: 1;
-  }
+
+
   /* End Table Styles */
   /* END OUTER CONTAINER STYLES */
   

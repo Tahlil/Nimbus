@@ -1,63 +1,41 @@
 <ion-header>
-  <ion-toolbar class="ion-text-center">  
+  <ion-toolbar class="ion-text-center">
     <ion-title>My Title Deeds</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="outer-container">
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Clicks</th>
-                <th>Priority</th>
-                <th>Impressions</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="priority-200">
-                <td class="name">TESmart KVM Switch HDMI Device</td>
-                <td class="clicks">857</td>
-                <td class="priority"><i class="fas fa-circle"></i> 200</td>
-                <td class="impressions">190</td>
-                <td class="delete"><button class="delete-btn"><i class="fas fa-trash-alt" title="delete row"></i></button></td>
-            </tr>
-
-            <tr class="priority-600">
-                <td class="name">Microsoft Surface Go Tablet</td>
-                <td class="clicks">620</td>
-                <td class="priority"><i class="fas fa-circle"></i> 600</td>
-                <td class="impressions">478</td>
-                <td class="delete"><button class="delete-btn"><i class="fas fa-trash-alt" title="delete row"></i></button></td>
-            </tr>
-
-            <tr class="priority-300">
-                <td class="name">Steam Online Games</td>
-                <td class="clicks">500</td>
-                <td class="priority"><i class="fas fa-circle"></i> 300</td>
-                <td class="impressions">322</td>
-                <td class="delete"><button class="delete-btn"><i class="fas fa-trash-alt" title="delete row"></i></button></td>
-            </tr>
-
-            <tr class="priority-200">
-                <td class="name">Apple iPhone X Smartphone</td>
-                <td class="clicks">762</td>
-                <td class="priority"><i class="fas fa-circle"></i> 200</td>
-                <td class="impressions">490</td>
-                <td class="delete"><button class="delete-btn"><i class="fas fa-trash-alt" title="delete row"></i></button></td>
-            </tr>
-
-            <tr class="priority-300">
-                <td class="name">Surftropic Pacific Islander Excursions</td>
-                <td class="clicks">170</td>
-                <td class="priority"><i class="fas fa-circle"></i> 300</td>
-                <td class="impressions">289</td>
-                <td class="delete"><button class="delete-btn"><i class="fas fa-trash-alt" title="delete row"></i></button></td>
-            </tr>
-        </tbody>
+    <table *ngIf="dataLoaded">
+      <thead style="border-bottom: 3px solid black;">
+        <tr>
+          <th>Location</th>
+          <th>Deed number</th>
+          <th>Date</th>
+          <th>Mark Number</th>
+          <th>Mortgage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of landData" [ngClass]="{'priority-200': checkMortage(d), 'priority-600': !checkMortage(d)}">
+          <td class="name" >
+            {{d.Title_Deed.Area}}, {{d.Title_Deed.Sub_District}}
+          </td>
+          <td class="clicks">{{d.Deed_No}}</td>
+          <td class="priority">{{d.timestamp | date: 'long'}}</td>
+          <td class="impressions">{{d.Title_Deed.Mark[0].portion}}</td>
+          <td *ngIf="checkMortage(d)">
+            <ion-text color="warning">
+                Already mortgaged.
+            </ion-text>
+          </td>
+          <td *ngIf="!checkMortage(d)"><ion-button (click)="mortgage()" shape="round" color="success" fill="outline" id="mort">
+            Mortgage <ion-icon color="success"  name="add"></ion-icon>
+            
+        </ion-button></td>
+        </tr>
+       
+      </tbody>
     </table>
-</div>
-
+  </div>
 </ion-content>
