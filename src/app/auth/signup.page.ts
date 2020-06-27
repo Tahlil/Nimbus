@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { ConfirmModalPage } from '../modals/confirm-modal/confirm-modal.page';
+import { Router } from "@angular/router";
 
 function verifyNID(){
   var nidV = document.getElementById('nidV');
@@ -79,7 +82,7 @@ function getBankImage(selected){
 export class SignUpPage implements OnInit {
   selectedDiv:string;
   
-  constructor() { }
+  constructor(public modalController: ModalController, private router: Router) { }
 
   checkDivSelect(){
   getBankImage(this.selectedDiv);
@@ -89,6 +92,17 @@ export class SignUpPage implements OnInit {
     callImageLoader();
     verifyNID();
     verifyBank();
+  }
+
+  async openModal(){
+    const modal = await this.modalController.create({
+      component: ConfirmModalPage,
+    });
+    let that = this;
+    modal.onDidDismiss().then(() => {
+      that.router.navigate(['/', 'home']);
+    });
+    return await modal.present();
   }
 
 }

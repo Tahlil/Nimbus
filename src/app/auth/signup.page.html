@@ -198,8 +198,9 @@
     
     <ion-row class="ion-margin-top">
       <ion-col class="ion-text-center">
-        <ion-button color="secondary" [routerLink]="['/home']"
-          >Finish</ion-button
+        <!-- [routerLink]="['/home']" -->
+        <ion-button color="secondary"  (click)="openModal()"
+          >Sign Up</ion-button
         >
       </ion-col>
     </ion-row>
