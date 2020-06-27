@@ -22,7 +22,7 @@
             {{d.Title_Deed.Area}}, {{d.Title_Deed.Sub_District}}
           </td>
           <td class="clicks">{{d.Deed_No}}</td>
-          <td class="priority">{{d.timestamp | date: 'long'}}</td>
+          <td class="priority">{{d.timestamp | date: 'medium'}}</td>
           <td class="impressions">{{d.Title_Deed.Mark[0].portion}}</td>
           <td *ngIf="checkMortage(d)">
             <ion-text color="warning">

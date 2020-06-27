@@ -17,7 +17,7 @@ export class MyTransactionsPage implements OnInit {
       for (const data of datas) {
         cur++;
         console.log(data.Title_Deed);
-        if (Math.random() > 0.6) {
+        if (cur === 3) {
           data["mortgage"] = true;
         } else {
           data["mortgage"] = false;

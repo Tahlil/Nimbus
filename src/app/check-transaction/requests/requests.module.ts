@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-
+import { ScrollbarThemeModule  } from '../../directives/scrollbar.directive';
 
 import { RequestsPage } from './requests.page';
 
@@ -13,6 +13,7 @@ import { RequestsPage } from './requests.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    ScrollbarThemeModule
     
   ],
   declarations: [RequestsPage]

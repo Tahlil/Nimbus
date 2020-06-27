@@ -4,6 +4,70 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content appScrollbarTheme>
+  <div class="outer-container">
+    <ion-text color="warning"><h2>Buying requests</h2></ion-text>
+    <table *ngIf="buyLandData && buyLandData.length != 0">
+      <thead style="border-bottom: 3px solid black;">
+        <tr>
+          <th>Location</th>
+          <th>Requested buyer</th>
+          <th>Date</th>
+          <th>Mark Number</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of buyLandData" class="priority-200">
+          <td class="name" >
+            {{d.Title_Deed.Area}}, {{d.Title_Deed.Sub_District}}
+          </td>
+          <td class="clicks">{{d.Buyer.Name}}</td>
+          <td class="priority">{{d.time | date: 'medium'}}</td>
+          <td class="impressions">{{d.Title_Deed.Mark[0].portion}}</td>
+          <td >
+            <ion-button (click)="approveBuy()" shape="round" color="success" fill="outline" id="mort">
+              Approve <ion-icon color="success"  name="add"></ion-icon>
+            </ion-button>
+          </td>
+          
+         
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
 
+  <br><br><br><br><br>
+  <div class="outer-container">
+    <ion-text color="success"><h2>Selling requests</h2></ion-text>
+    <table *ngIf="sellLandData && sellLandData.length != 0">
+      <thead style="border-bottom: 3px solid black;">
+        <tr>
+          <th>Location</th>
+          <th>Deed number</th>
+          <th>Date</th>
+          <th>Mark Number</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of sellLandData" class="priority-600">
+          <td class="name" >
+            {{d.Title_Deed.Area}}, {{d.Title_Deed.Sub_District}}
+          </td>
+          <td class="clicks">{{d.Deed_No}}</td>
+          <td class="priority">{{d.time | date: 'medium'}}</td>
+          <td class="impressions">{{d.Title_Deed.Mark[0].portion}}</td>
+          <td >
+            <ion-button (click)="approveSell()" shape="round" color="success" fill="outline" id="mort">
+              Proceed <ion-icon color="success"  name="add"></ion-icon>
+            </ion-button>
+          </td>
+
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
 </ion-content>
