@@ -11,22 +11,41 @@ export class MyTransactionsPage implements OnInit {
   constructor(private landInfoService: LandInfoService) {
     this.landData = [];
     let that = this;
+    let user = "X";
     this.dataLoaded = false;
     this.landInfoService.getJSON().subscribe((datas) => {
       let cur = 0;
       for (const data of datas) {
         cur++;
-        console.log(data.Title_Deed);
-        if (cur === 3) {
-          data["mortgage"] = true;
-        } else {
-          data["mortgage"] = false;
+        if (user === "X") {
+          if (cur === 33) {
+            data["mortgage"] = true;
+          } else {
+            data["mortgage"] = false;
+          }
+         
+          if(data && cur > 32 && cur<36)
+            that.landData.push(data);
+          if (cur > 35) {
+            break;
+          }
         }
-        if(data)
-          that.landData.push(data);
-        if (cur > 5) {
-          break;
+        else{
+          if (cur === 3) {
+            data["mortgage"] = true;
+          } else {
+            data["mortgage"] = false;
+          }
+          if(cur === 4){           
+            data.Title_Deed.Area = "001-নৈহাটী";
+          }
+          if(data)
+            that.landData.push(data);
+          if (cur > 5) {
+            break;
+          }
         }
+        
         
       }
       that.dataLoaded = true;

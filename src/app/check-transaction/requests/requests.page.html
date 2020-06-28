@@ -24,10 +24,10 @@
           </td>
           <td class="clicks">{{d.Buyer.Name}}</td>
           <td class="priority">{{d.time | date: 'medium'}}</td>
-          <td class="impressions">{{d.Title_Deed.Mark[0].portion}}</td>
+          <td class="impressions">{{d.Title_Deed.Mark[0].Mark_No}}</td>
           <td >
             <ion-button (click)="approveBuy()" shape="round" color="success" fill="outline" id="mort">
-              Approve <ion-icon color="success"  name="add"></ion-icon>
+              Approve <ion-icon name="checkmark-circle-outline"></ion-icon>
             </ion-button>
           </td>
           
@@ -58,10 +58,10 @@
           </td>
           <td class="clicks">{{d.Deed_No}}</td>
           <td class="priority">{{d.time | date: 'medium'}}</td>
-          <td class="impressions">{{d.Title_Deed.Mark[0].portion}}</td>
+          <td class="impressions">{{d.Title_Deed.Mark[0].Mark_No}}</td>
           <td >
             <ion-button (click)="approveSell()" shape="round" color="success" fill="outline" id="mort">
-              Proceed <ion-icon color="success"  name="add"></ion-icon>
+              Proceed <ion-icon name="arrow-forward-circle-outline"></ion-icon>
             </ion-button>
           </td>
 

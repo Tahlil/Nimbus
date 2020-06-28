@@ -23,7 +23,7 @@
           </td>
           <td class="clicks">{{d.Deed_No}}</td>
           <td class="priority">{{d.timestamp | date: 'medium'}}</td>
-          <td class="impressions">{{d.Title_Deed.Mark[0].portion}}</td>
+          <td class="impressions">{{d.Title_Deed.Mark[0].Mark_No}}</td>
           <td *ngIf="checkMortage(d)">
             <ion-text color="warning">
                 Already mortgaged.
