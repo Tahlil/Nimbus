@@ -51,6 +51,10 @@ const routes: Routes = [
     path: 'ad-modal',
     loadChildren: () => import('./modals/ad-modal/ad-modal.module').then( m => m.AdModalPageModule)
   },
+  {
+    path: 'complete-modal',
+    loadChildren: () => import('./modals/complete-modal/complete-modal.module').then( m => m.CompleteModalPageModule)
+  },
   // {
   //   path: 'model',
   //   loadChildren: () => import('./model/model/model.module').then( m => m.ModelPageModule)
