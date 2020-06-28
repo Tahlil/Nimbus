@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { LandInfoService } from "../../land-info.service";
 import { ModalController } from '@ionic/angular';
+
 import { MortageModalPage } from '../../modals/mortage-modal/mortage-modal.page';
 @Component({
   selector: "app-my-transactions",
@@ -26,9 +27,9 @@ export class MyTransactionsPage implements OnInit {
             data["mortgage"] = false;
           }
          
-          if(data && cur > 32 && cur<36)
+          if(data && cur > 32 && cur<39)
             that.landData.push(data);
-          if (cur > 35) {
+          if (cur > 39) {
             break;
           }
         }

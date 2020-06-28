@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 
 
 
+
 @Component({
   selector: 'app-approve-modal',
   templateUrl: './approve-modal.page.html',
@@ -15,7 +16,7 @@ export class ApproveModalPage implements OnInit {
   constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {
-    verifyBank();
+   
   }
 
   

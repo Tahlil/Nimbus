@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content appScrollbarTheme>
   <div class="outer-container">
     <table *ngIf="dataLoaded">
       <thead style="border-bottom: 3px solid black;">
@@ -14,6 +14,7 @@
           <th>Date</th>
           <th>Mark Number</th>
           <th>Mortgage</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -32,6 +33,9 @@
           <td *ngIf="!checkMortage(d)"><ion-button (click)="mortgage()" shape="round" color="success" fill="outline" id="mort">
             Mortgage <ion-icon color="success"  name="add"></ion-icon>
             
+        </ion-button></td>
+        <td><ion-button (click)="getReport()" color="primary">
+           Download deed <ion-icon name="arrow-down-circle-outline"></ion-icon>
         </ion-button></td>
         </tr>
        

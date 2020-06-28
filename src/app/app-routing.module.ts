@@ -47,6 +47,10 @@ const routes: Routes = [
     path: 'mortage-modal',
     loadChildren: () => import('./modals/mortage-modal/mortage-modal.module').then( m => m.MortageModalPageModule)
   },
+  {
+    path: 'ad-modal',
+    loadChildren: () => import('./modals/ad-modal/ad-modal.module').then( m => m.AdModalPageModule)
+  },
   // {
   //   path: 'model',
   //   loadChildren: () => import('./model/model/model.module').then( m => m.ModelPageModule)

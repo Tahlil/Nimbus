@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Advertise your land for sale</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" appScrollbarTheme>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="2"> Location</ion-col>
+      <ion-col size="2">Mark No.</ion-col>
+      <ion-col size="3">Min price (in BDT)</ion-col>
+      <ion-col size="3">Max price (in BDT)</ion-col>
+      <ion-col size="2">Buy advertise</ion-col>
+    </ion-row>
+
+      <hr />
+      <ion-row *ngFor="let d of landData; let i= index;">
+        <ion-col size="2"> {{d.Title_Deed.Area}}, {{d.Title_Deed.Sub_District}}</ion-col>
+        <ion-col size="2">{{d.Title_Deed.Mark[0].Mark_No}}</ion-col>
+        <ion-col size="3" style="border-bottom: 1px solid red;"><ion-input type="number" value="200000"></ion-input></ion-col>
+        <ion-col size="3" style="border-bottom: 1px solid green;"><ion-input type="number" value="1000000"></ion-input></ion-col>
+        <ion-col  size="2"> <input type="checkbox" id="{{'Id'+i}}" name="{{'Id'+i}}" value="Check">
+          <label for="{{'Id'+i}}">Check</label></ion-col>
+      </ion-row>
+
+    <ion-row>
+      <ion-col size="7" offset-sm="1">
+        <ion-list>
+        <ion-text>Choose bank</ion-text>
+          <ion-item>
+            <ion-label position="floating">Choose Bank</ion-label>
+            <ion-select
+              [(ngModel)]="selectedDiv"
+              (ngModelChange)="checkDivSelect()"
+            >
+              <ion-select-option value="bankis">
+                <ion-label id="bankis">Bankis Bank</ion-label>
+              </ion-select-option>
+              <ion-select-option value="diamond">     
+              <ion-label>Diamond Bank</ion-label>
+            </ion-select-option>
+            <ion-select-option value="yes" >
+              
+                <ion-label>Yes Bank</ion-label>
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col size-sm="4" >
+          <img src="" alt="" id="bankLogo" width="100px" height="70px">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10" offset-sm="1">
+        <ion-item>
+          <ion-label position="floating">Bank ID</ion-label>
+          <ion-input type="password" placeholder="Your bank id"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-margin-top">
+        <ion-col offset-sm="2">
+            <button
+              style="
+                background-color: teal;
+                color: azure;
+                padding: 10px;
+                border-radius: 11px;
+                font: bolder;
+                width: 9rem;
+              "
+              rounded
+              id="bankV"
+            >
+              Verify Bank ID
+            </button>
+          </ion-col>
+          <ion-col>
+            <div id="spinner2" style="visibility: hidden;"></div>
+            <div id="success-checkmark2" style="display: none;">
+              <div id="check-icon2" style="display: none;">
+                <span class="icon-line line-tip"></span>
+                <span class="icon-line line-long"></span>
+                <div class="icon-circle"></div>
+                <div class="icon-fix"></div>
+              </div>
+            </div>
+          </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-footer>
+ 
+      <ion-button (click)="dismiss()" color="success" expand="block"  shape="round">
+        Go to Details &nbsp;<ion-icon slot="start" name="reader-outline"></ion-icon>
+      </ion-button>
+
+  </ion-footer>
+  
+</ion-content>

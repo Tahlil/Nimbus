@@ -4,17 +4,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <button class="btn btn-3d btn-3db" style="margin: auto; margin-top: 7rem;">Advertise your land</button>
+<ion-content appScrollbarTheme>
+  <button (click)="getLandList()" class="btn btn-3d btn-3db" style="margin: auto; margin-top: 7rem;">Advertise your land</button>
   
   <div class="outer-container">
-    <h1>Advertise list <ion-icon name="pricetag-outline"></ion-icon></h1>
+    <h1 style="font-weight: bolder;">Advertise list <ion-icon name="pricetags-outline"></ion-icon></h1>
     <table *ngIf="advertises || advertises.length != 0">
       <thead style="border-bottom: 3px solid black;">
         <tr>
           <th>Location</th>
           <th>Owner</th>
-          <th>Date</th>
+          <th>Price (In BDT)</th>
           <th>Mark Number</th>
           <th></th>
         </tr>
@@ -25,7 +25,7 @@
             {{d.Title_Deed.Area}}, {{d.Title_Deed.Sub_District}}
           </td>
           <td class="clicks">{{d.Buyer.Name}}</td>
-          <td class="priority">{{d.timestamp | date: 'medium'}}</td>
+          <td class="priority">{{round(d.Deed.Assest_Price.InNumbers/100000)}}</td>
           <td class="impressions">{{d.Title_Deed.Mark[0].Mark_No}}</td>
           <td><ion-button (click)="mortgage()" shape="round" color="info" fill="outline" id="mort">
             Buy <ion-icon color="success"  name="add"></ion-icon>

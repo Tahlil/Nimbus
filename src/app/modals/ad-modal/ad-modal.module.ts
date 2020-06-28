@@ -4,20 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { AdModalPageRoutingModule } from './ad-modal-routing.module';
 import { ScrollbarThemeModule  } from '../../directives/scrollbar.directive';
 
-
-import { MyTransactionsPage } from './my-transactions.page';
+import { AdModalPage } from './ad-modal.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    AdModalPageRoutingModule,
     ScrollbarThemeModule
-    
   ],
-  declarations: [MyTransactionsPage],
-  entryComponents: [MyTransactionsPage]
+  declarations: [AdModalPage]
 })
-export class MyTransactionsPageModule {}
+export class AdModalPageModule {}
