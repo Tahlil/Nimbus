@@ -3,6 +3,10 @@ import { LandInfoService } from "../../land-info.service";
 import { ModalController } from '@ionic/angular';
 import { AdModalPage } from '../../modals/ad-modal/ad-modal.page';
 
+
+import { CompleteModalPage } from '../../modals/complete-modal/complete-modal.page';
+
+
 @Component({
   selector: 'app-advertises',
   templateUrl: './advertises.page.html',
@@ -33,9 +37,26 @@ export class AdvertisesPage implements OnInit {
     return Math.round(num);
   }
 
+  async openCompleteModal(){
+    const modal = await this.modalController.create({
+      component: CompleteModalPage,
+      componentProps: { 
+        title: 'Advertise Status',
+        body: 'Successfully added to advertisement.'
+      }
+    });
+    return await modal.present();
+  }
+
   async getLandList(){
+    let that = this;
     const modal = await this.modalController.create({
       component: AdModalPage,
+    });
+    modal.onDidDismiss().then(() => {
+      setTimeout(() => {
+        that.openCompleteModal();
+      }, 2000);
     });
     return await modal.present();
   }
