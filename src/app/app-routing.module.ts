@@ -39,6 +39,14 @@ const routes: Routes = [
     path: 'confirm-modal',
     loadChildren: () => import('./modals/confirm-modal/confirm-modal.module').then( m => m.ConfirmModalPageModule)
   },
+  {
+    path: 'approve-modal',
+    loadChildren: () => import('./modals/approve-modal/approve-modal.module').then( m => m.ApproveModalPageModule)
+  },
+  {
+    path: 'mortage-modal',
+    loadChildren: () => import('./modals/mortage-modal/mortage-modal.module').then( m => m.MortageModalPageModule)
+  },
   // {
   //   path: 'model',
   //   loadChildren: () => import('./model/model/model.module').then( m => m.ModelPageModule)

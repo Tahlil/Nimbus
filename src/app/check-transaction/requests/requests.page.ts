@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LandInfoService } from "../../land-info.service";
+import { ModalController } from '@ionic/angular';
+import { ApproveModalPage } from '../../modals/approve-modal/approve-modal.page';
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-requests',
   templateUrl: './requests.page.html',
@@ -7,7 +10,7 @@ import { LandInfoService } from "../../land-info.service";
 })
 export class RequestsPage implements OnInit {
 
-  constructor(private landInfoService: LandInfoService) { }
+  constructor(private landInfoService: LandInfoService, public modalController: ModalController, private router: Router) { }
   buyLandData:any = [];
   sellLandData:any  = [];
   
@@ -78,15 +81,38 @@ export class RequestsPage implements OnInit {
         
       }
     });
-    }
-    
-  }
-  approveSell(){
-
+    }   
   }
 
-  approveBuy(){
+  async approveSell(){
+    const modal = await this.modalController.create({
+      component: ApproveModalPage,
+      componentProps: { 
+        title: 'Sell Approved',
+        body: 'Please proceed to the simple contract.'
+      }
+    });
+    let that = this;
+    modal.onDidDismiss().then(() => {
+      that.router.navigate(['/', 'transaction', 'detail']);
+    });
+    return await modal.present();
+  }
 
+  async approveBuy(){
+    const modal = await this.modalController.create({
+      component: ApproveModalPage,
+      componentProps: { 
+        title: 'Buy Approved',
+        body: 'Please proceed to the simple contract.'
+      }
+    });
+    let that = this;
+    modal.onDidDismiss().then(() => {
+      console.log("Navigate...");
+      that.router.navigate(['/', 'transaction', 'detail']);
+    });
+    return await modal.present();
   }
 
 }

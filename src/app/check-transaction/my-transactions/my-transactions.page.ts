@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { LandInfoService } from "../../land-info.service";
+import { ModalController } from '@ionic/angular';
+import { MortageModalPage } from '../../modals/mortage-modal/mortage-modal.page';
 @Component({
   selector: "app-my-transactions",
   templateUrl: "./my-transactions.page.html",
@@ -8,7 +10,7 @@ import { LandInfoService } from "../../land-info.service";
 export class MyTransactionsPage implements OnInit {
   landData = [];
   dataLoaded: Boolean = false;
-  constructor(private landInfoService: LandInfoService) {
+  constructor(private landInfoService: LandInfoService, public modalController: ModalController) {
     this.landData = [];
     let that = this;
     let user = "X";
@@ -60,7 +62,11 @@ export class MyTransactionsPage implements OnInit {
     return false;
   }
 
-  mortgage(){
-
+  async mortgage(){
+    const modal = await this.modalController.create({
+      component: MortageModalPage,
+    });
+    return await modal.present();
   }
+  
 }

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-text class="ion-text-center text-justify">
+     <h1> <ion-icon name="checkmark-outline"></ion-icon> {{body}}</h1>
+  </ion-text>
+
+  <ion-footer>
+ 
+      <ion-button (click)="dismiss()" color="primary" expand="block"  shape="round">
+        Proceed to simple contract <ion-icon name="document-text-outline"></ion-icon>
+      </ion-button>
+
+  </ion-footer>
+  
+</ion-content>
