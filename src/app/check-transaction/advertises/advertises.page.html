@@ -5,5 +5,35 @@
 </ion-header>
 
 <ion-content>
-
+  <button class="btn btn-3d btn-3db" style="margin: auto; margin-top: 7rem;">Advertise your land</button>
+  
+  <div class="outer-container">
+    <h1>Advertise list <ion-icon name="pricetag-outline"></ion-icon></h1>
+    <table *ngIf="advertises || advertises.length != 0">
+      <thead style="border-bottom: 3px solid black;">
+        <tr>
+          <th>Location</th>
+          <th>Owner</th>
+          <th>Date</th>
+          <th>Mark Number</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of advertises">
+          <td class="name" >
+            {{d.Title_Deed.Area}}, {{d.Title_Deed.Sub_District}}
+          </td>
+          <td class="clicks">{{d.Buyer.Name}}</td>
+          <td class="priority">{{d.timestamp | date: 'medium'}}</td>
+          <td class="impressions">{{d.Title_Deed.Mark[0].Mark_No}}</td>
+          <td><ion-button (click)="mortgage()" shape="round" color="info" fill="outline" id="mort">
+            Buy <ion-icon color="success"  name="add"></ion-icon>
+            
+        </ion-button></td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
 </ion-content>

@@ -117,3 +117,6 @@ h1 {
     }
   }
   
+  ion-button:hover{
+    -moz-transform: scale(1.1); -webkit-transform: scale(1.1); transform: scale(1.1); transition:0.7s ease all; -webkit-transition:0.7s ease all; -moz-transition:0.7s ease all;
+ }

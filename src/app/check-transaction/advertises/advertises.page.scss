@@ -1,0 +1,192 @@
+.btn {
+    border: none;
+    position: relative;
+    background: none;
+    cursor: pointer;
+    padding: 28px 90px;
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 15px 30px;
+    color: inherit;
+    letter-spacing: 2px;
+    font-size: 1em;
+    outline: none;
+    -moz-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+  .btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+  .btn_perspective {
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    perspective: 800px;
+    display: inline-block;
+  }
+  
+  .btn-3d {
+    display: block;
+    background: #1b8b7d;
+    outline: 1px solid transparent;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  
+  .btn-3d:active {
+    background: #1cad95;
+  }
+
+  .btn-3db:after {
+    width: 100%;
+    height: 40%;
+    left: 0;
+    top: 100%;
+    background: #1cad95;
+    -webkit-transform-origin: 0% 0%;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform-origin: 0% 0%;
+    -moz-transform: rotateX(-90deg);
+    -ms-transform-origin: 0% 0%;
+    -ms-transform: rotateX(-90deg);
+    transform-origin: 0% 0%;
+    transform: rotateX(-90deg);
+  }
+  
+  .btn-3db:hover {
+    -webkit-transform: rotateX(35deg);
+    -moz-transform: rotateX(35deg);
+    -ms-transform: rotateX(35deg);
+    transform: rotateX(35deg);
+  }
+  
+  ion-button:hover{
+    -moz-transform: scale(1.1); -webkit-transform: scale(1.1); transform: scale(1.1); transition:0.7s ease all; -webkit-transition:0.7s ease all; -moz-transition:0.7s ease all;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+ ion-content{
+    animation: fadeInPage ease 1.5s; /* fade page in */
+    animation-iteration-count: 1; /* fade page in */
+    animation-fill-mode: forwards; /* fade page in */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #0a837b;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    width: 100%;
+ } 
+h1 {
+    text-align: center;
+    color: whitesmoke;
+    margin: -2.5rem 0 0.625rem 0;
+  }
+  /* END CSS RESET + COMMON STYLES */
+  
+  /* START OUTER CONTAINER STYLES */
+  .outer-container {
+    border: 3px solid green;
+    background-color: #0a837b;
+    border-radius: 0.625rem;
+    box-shadow: 0 5px 10px rgba(12, 16, 31, 0.4);
+    padding: 6.25rem;
+    margin: auto;
+    width: 95%;
+    margin-top: 11rem;
+    max-width: 62.5rem;
+    z-index: 111;
+  }
+  
+  /* Start Table Styles */
+  table {
+    color: #e2e2e2;
+    font-size: 0.875rem;
+    padding: 0.625rem;
+    width: 100%;
+  }
+  table th {
+    font-size: 1rem;
+  }
+  table th,
+  table td {
+    padding: 0.9375rem;
+    text-align: left;
+  }
+  table tbody tr {
+    background-color: #26745a;
+  }
+  table tbody tr:hover {
+    background-color: #47695f;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
+  table tbody tr td:first-of-type {
+    border-top-left-radius: 0.3125rem;
+    border-bottom-left-radius: 0.3125rem;
+  }
+  table tbody tr td:last-of-type {
+    border-top-right-radius: 0.3125rem;
+    border-bottom-right-radius: 0.3125rem;
+    text-align: center;
+  }
+  table tbody tr.priority-200 td:first-of-type {
+    border-left: 0.3125rem solid #d6a13f;
+  }
+
+  table tbody tr.priority-600 td:first-of-type {
+    border-left: 0.3125rem solid #40c587;
+  }
+  table tbody tr td .fa-circle {
+    transform: scale(0.7);
+  }
+  table tbody tr.priority-200 td .fa-circle {
+    color: #d6a13f;
+  }
+
+  table tbody tr.priority-600 td .fa-circle {
+    color: #40c587;
+  }
+
+
+  /* End Table Styles */
+  /* END OUTER CONTAINER STYLES */
+  
+  /* KEYFRAMES */
+  /* Fade In Webpage Keyframe */
+  @keyframes fadeInPage {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* MEDIA QUERIES */
+  @media (max-width: 768px) {
+    .outer-container {
+      padding: 1.25rem;
+    }
+    h1 {
+      margin: 0;
+    }
+  }
+  @media (max-width: 668px) {
+    table th:nth-of-type(3),
+    table td:nth-of-type(3) {
+      display: none;
+    }
+  }
