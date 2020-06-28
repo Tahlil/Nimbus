@@ -85,7 +85,7 @@ export class SignUpPage implements OnInit {
   constructor(public modalController: ModalController, private router: Router) { }
 
   checkDivSelect(){
-  getBankImage(this.selectedDiv);
+    getBankImage(this.selectedDiv);
   }
 
   ngOnInit() {

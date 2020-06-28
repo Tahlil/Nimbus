@@ -53,6 +53,14 @@
           </ion-item>
         </ion-list>
       </ion-col>
+      <ion-col size="12" size-sm="5">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Buyer name</ion-label>
+            <ion-input value="test"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
     </ion-row>
 
     <ion-row>
@@ -62,15 +70,15 @@
       <ion-col size="12" size-sm="5" offset-sm="1">
         <ion-list>
           <ion-item>
-            <ion-label position="floating">Current owner name</ion-label>
-            <ion-input></ion-input>
+            <ion-label position="floating">Your NID</ion-label>
+            <ion-input type="password"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
       <ion-col size="12" size-sm="5">
         <ion-list>
           <ion-item>
-            <ion-label position="floating">Buyer name</ion-label>
+            <ion-label position="floating">Your name</ion-label>
             <ion-input></ion-input>
           </ion-item>
         </ion-list>
@@ -80,18 +88,85 @@
       <ion-col size="12" size-sm="5" offset-sm="1">
         <ion-list>
           <ion-item>
-            <ion-label position="floating">Price</ion-label>
+            <ion-label position="floating">Price (BDT)</ion-label>
             <ion-input type="number" step=10></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>
-    <ion-row >
+
+    <ion-row>
+      <ion-col size="12" size-sm="5" offset-sm="1">
+        <ion-list>
+        <ion-text>Choose bank</ion-text>
+          <ion-item>
+            <ion-label position="floating">Choose Bank</ion-label>
+            <ion-select
+              [(ngModel)]="selectedDiv"
+              (ngModelChange)="checkDivSelect()"
+            >
+              <ion-select-option value="bankis">
+                <ion-label id="bankis">Bankis Bank</ion-label>
+              </ion-select-option>
+              <ion-select-option value="diamond">     
+              <ion-label>Diamond Bank</ion-label>
+            </ion-select-option>
+            <ion-select-option value="yes" >
+              
+                <ion-label>Yes Bank</ion-label>
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col size-sm="5" >
+          <img src="" alt="" id="bankLogo" width="100px" height="70px">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-sm="5" offset-sm="1">
+        <ion-item>
+          <ion-label position="floating">Bank ID</ion-label>
+          <ion-input type="password" placeholder="Your bank id"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-margin-top">
+        <ion-col size-sm="1" offset-sm="2">
+            <button
+              style="
+                background-color: teal;
+                color: azure;
+                padding: 10px;
+                border-radius: 11px;
+                font: bolder;
+                width: 9rem;
+              "
+              rounded
+              id="bankV"
+            >
+              Verify Bank ID
+            </button>
+          </ion-col>
+          <ion-col size-sm="3">
+            <div id="spinner2" style="visibility: hidden;"></div>
+            <div id="success-checkmark2" style="display: none;">
+              <div id="check-icon2" style="display: none;">
+                <span class="icon-line line-tip"></span>
+                <span class="icon-line line-long"></span>
+                <div class="icon-circle"></div>
+                <div class="icon-fix"></div>
+              </div>
+            </div>
+          </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-margin-top" >
       <ion-col class="ion-text-center" size="12" size-sm="6">
-        <ion-button color="secondary"> <ion-icon name="add-outline"></ion-icon> Apply </ion-button>
+        <ion-button color="secondary"> <ion-icon name="add-outline"></ion-icon>&nbsp; Apply </ion-button>
       </ion-col>
       <ion-col class="ion-text-center" size="12" size-sm="6">
-        <ion-button color="secondary"> <ion-icon name="return-up-back-outline"></ion-icon> Go Back </ion-button>
+        <ion-button color="secondary"> <ion-icon name="return-up-back-outline"></ion-icon>&nbsp; Go Back </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
