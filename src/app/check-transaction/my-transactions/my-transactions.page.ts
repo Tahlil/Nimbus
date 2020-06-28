@@ -14,7 +14,7 @@ export class MyTransactionsPage implements OnInit {
   constructor(private landInfoService: LandInfoService, public modalController: ModalController) {
     this.landData = [];
     let that = this;
-    let user = "X";
+    let user = "Y";
     this.dataLoaded = false;
     this.landInfoService.getJSON().subscribe((datas) => {
       let cur = 0;

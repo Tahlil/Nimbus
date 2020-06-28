@@ -15,7 +15,7 @@ export class RequestsPage implements OnInit {
   sellLandData:any  = [];
   
   ngOnInit() {
-    let user = "X";
+    let user = "Y";
     let that = this;
     if(user ==="X"){
       let buyTs = [1593274988, 1555063238, 	1552364112, 1547547811, 1530138736]

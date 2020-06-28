@@ -13,7 +13,7 @@
         <ion-list>
           <ion-item>
             <ion-label position="floating">Division</ion-label>
-            <ion-input></ion-input>
+            <ion-input value="Dhaka"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
@@ -21,7 +21,7 @@
         <ion-list>
           <ion-item>
             <ion-label position="floating">District</ion-label>
-            <ion-input></ion-input>
+            <ion-input value="Dhaka"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
@@ -31,7 +31,7 @@
         <ion-list>
           <ion-item>
             <ion-label position="floating">Sub district</ion-label>
-            <ion-input></ion-input>
+            <ion-input value="Savar"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
@@ -39,7 +39,7 @@
         <ion-list>
           <ion-item>
             <ion-label position="floating">Mouja (Area name)</ion-label>
-            <ion-input></ion-input>
+            <ion-input value="001-নৈহাটী"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
@@ -49,7 +49,7 @@
         <ion-list>
           <ion-item>
             <ion-label position="floating">Deed number</ion-label>
-            <ion-input></ion-input>
+            <ion-input value="548"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
@@ -57,7 +57,7 @@
         <ion-list>
           <ion-item>
             <ion-label position="floating">Buyer name</ion-label>
-            <ion-input value="test"></ion-input>
+            <ion-input value="Mr. X"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
@@ -163,10 +163,10 @@
 
     <ion-row class="ion-margin-top" >
       <ion-col class="ion-text-center" size="12" size-sm="6">
-        <ion-button color="secondary"> <ion-icon name="add-outline"></ion-icon>&nbsp; Apply </ion-button>
+        <ion-button (click)="openModal()" color="secondary"> <ion-icon name="add-outline"></ion-icon>&nbsp; Apply </ion-button>
       </ion-col>
       <ion-col class="ion-text-center" size="12" size-sm="6">
-        <ion-button color="secondary"> <ion-icon name="return-up-back-outline"></ion-icon>&nbsp; Go Back </ion-button>
+        <ion-button [routerLink]="['/option']" color="secondary"> <ion-icon name="return-up-back-outline"></ion-icon>&nbsp; Go Back </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

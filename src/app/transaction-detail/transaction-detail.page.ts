@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { Router } from "@angular/router";
 
+import { CompleteModalPage } from '../modals/complete-modal/complete-modal.page';
 function verifyBank(){
   var bankV = document.getElementById('bankV');
   bankV.onclick = function() {
@@ -27,7 +30,7 @@ function getBankImage(selected){
 })
 export class TransactionDetailPage implements OnInit {
   selectedDiv:string;
-  constructor() { }
+  constructor(public modalController: ModalController, private router: Router) { }
 
   checkDivSelect(){
     getBankImage(this.selectedDiv);
@@ -35,6 +38,24 @@ export class TransactionDetailPage implements OnInit {
 
   ngOnInit() {
     verifyBank();
+  }
+
+  async openModal(){
+    let that = this;
+      const modal = await this.modalController.create({
+        component: CompleteModalPage,
+        componentProps: { 
+          title: 'Simple contract Status',
+          body: 'Successfully added your information to the contract.'
+        }
+      });
+      modal.onDidDismiss().then(() => {
+        that.router.navigate(['/', 'option']);
+      });
+      setTimeout(async () => {
+        return await modal.present();
+      }, 2000);
+      
   }
 
 }
