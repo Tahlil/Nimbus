@@ -29,6 +29,24 @@ export class AdvertisesPage implements OnInit {
             break;
           }
         }
+        // that.advertises.push({
+        //   Deed_No: 548,
+        //   Buyer: {
+        //    Name:
+        //   },
+        //   timestamp: 1593277519/700*1000,
+        //   Title_Deed: {
+        //     Area: "001-নৈহাটী",
+        //     Sub_District: "Savar",
+        //     Mark: [
+        //       {
+        //         Mark_No: 208
+        //       }
+        //     ]
+        //   },
+          
+        // });
+        
 
     });
   }

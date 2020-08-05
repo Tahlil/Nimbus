@@ -23,7 +23,7 @@
             {{d.Title_Deed.Area}}, {{d.Title_Deed.Sub_District}}
           </td>
           <td class="clicks">{{d.Buyer.Name}}</td>
-          <td class="priority">{{d.time | date: 'medium'}}</td>
+          <td class="priority">{{d.time*1000 | date: 'fullDate'}}</td>
           <td class="impressions">{{d.Title_Deed.Mark[0].Mark_No}}</td>
           <td >
             <ion-button (click)="approveBuy()" shape="round" color="success" fill="outline" id="mort">
@@ -46,6 +46,7 @@
         <tr>
           <th>Location</th>
           <th>Deed number</th>
+          <th>Owner</th>
           <th>Date</th>
           <th>Mark Number</th>
           <th></th>
@@ -57,7 +58,8 @@
             {{d.Title_Deed.Area}}, {{d.Title_Deed.Sub_District}}
           </td>
           <td class="clicks">{{d.Deed_No}}</td>
-          <td class="priority">{{d.time | date: 'medium'}}</td>
+          <td>{{d.Buyer.Name}}</td>
+          <td class="priority">{{d.time*1000 | date: 'fullDate'}}</td>
           <td class="impressions">{{d.Title_Deed.Mark[0].Mark_No}}</td>
           <td >
             <ion-button (click)="approveSell()" shape="round" color="success" fill="outline" id="mort">

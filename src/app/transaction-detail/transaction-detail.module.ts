@@ -7,13 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { TransactionDetailPageRoutingModule } from './transaction-detail-routing.module';
 
 import { TransactionDetailPage } from './transaction-detail.page';
-
+import { ScrollbarThemeModule  } from '../directives/scrollbar.directive';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TransactionDetailPageRoutingModule
+    TransactionDetailPageRoutingModule,
+    ScrollbarThemeModule
   ],
   declarations: [TransactionDetailPage]
 })

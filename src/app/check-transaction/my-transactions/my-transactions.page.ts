@@ -14,7 +14,7 @@ export class MyTransactionsPage implements OnInit {
   constructor(private landInfoService: LandInfoService, public modalController: ModalController) {
     this.landData = [];
     let that = this;
-    let user = "Y";
+    let user = "X";
     this.dataLoaded = false;
     this.landInfoService.getJSON().subscribe((datas) => {
       let cur = 0;
@@ -32,6 +32,7 @@ export class MyTransactionsPage implements OnInit {
           if (cur > 39) {
             break;
           }
+         
         }
         else{
           if (cur === 3) {
@@ -40,6 +41,7 @@ export class MyTransactionsPage implements OnInit {
             data["mortgage"] = false;
           }
           if(cur === 4){           
+            data.Deed_No = 548;
             data.Title_Deed.Area = "001-নৈহাটী";
           }
           if(data)
@@ -51,12 +53,30 @@ export class MyTransactionsPage implements OnInit {
         
         
       }
+      if (user === "X"){
+        that.landData.push({
+          Deed_No: 549,
+          timestamp: 1593277519/700*1000,
+          Title_Deed: {
+            Area: "001-নৈহাটী",
+            Sub_District: "Savar",
+            Mark: [
+              {
+                Mark_No: 208
+              }
+            ]
+          },
+          
+        });
+      }
       that.dataLoaded = true;
     });
   }
 
   ngOnInit() {}
 
+
+    
   checkMortage(hasMortgage) {
     if(hasMortgage)
       return hasMortgage.hasOwnProperty('mortgage') ? hasMortgage.mortgage : false;
@@ -68,6 +88,13 @@ export class MyTransactionsPage implements OnInit {
       component: MortageModalPage,
     });
     return await modal.present();
+  }
+
+  getReport(){
+    setTimeout(() => {
+      window.open('../../../assets/NimbusDeed.pdf');
+      
+    }, 1000);
   }
   
 }

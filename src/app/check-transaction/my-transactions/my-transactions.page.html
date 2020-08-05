@@ -23,7 +23,7 @@
             {{d.Title_Deed.Area}}, {{d.Title_Deed.Sub_District}}
           </td>
           <td class="clicks">{{d.Deed_No}}</td>
-          <td class="priority">{{d.timestamp | date: 'medium'}}</td>
+          <td class="priority">{{d.timestamp*700 | date: 'fullDate'}}</td>
           <td class="impressions">{{d.Title_Deed.Mark[0].Mark_No}}</td>
           <td *ngIf="checkMortage(d)">
             <ion-text color="warning">
@@ -35,7 +35,8 @@
             
         </ion-button></td>
         <td><ion-button (click)="getReport()" color="primary">
-           Download deed <ion-icon name="arrow-down-circle-outline"></ion-icon>
+          Download deed <ion-icon name="arrow-down-circle-outline"></ion-icon>
+            
         </ion-button></td>
         </tr>
        

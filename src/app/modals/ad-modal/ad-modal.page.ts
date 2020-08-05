@@ -38,13 +38,25 @@ export class AdModalPage implements OnInit {
     this.landInfoService.getJSON().subscribe((datas) => {
       let cur = 0;
       for (const data of datas) {  
-          if(data && cur > 32 && cur<39 && cur !== 34)
+        //39
+          if(data && cur > 32 && cur<36 && cur !== 34)
             that.landData.push(data);
           if (cur > 39) {
             break;
           }
           cur++;
       }
+        // that.landData.push({
+        //   timestamp: 1593277519/700*1000,
+        //   Title_Deed: {
+        //     Area: "001-নৈহাটী",
+        //     Sub_District: "Savar",
+        //     Mark: [
+        //       {
+        //         Mark_No: 208
+        //       }
+        //     ]
+        //   }});
  
     });
   }
